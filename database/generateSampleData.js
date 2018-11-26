@@ -25,7 +25,7 @@ s3.listObjects(params, (err, data) => {
     let baseURL = `https://s3-us-west-1.amazonaws.com/fec2homephotos/`;
     let generateImagesArr = () => {
       let imgArr = [];  
-      for (let i = 1; i <= 40; i++) {
+      for (let i = 1; i <= 1000; i++) {
         let randomIndex = Math.floor(Math.random() * data.Contents.length);
         if (!randomIndex) {
           randomIndex +=1;
@@ -35,7 +35,7 @@ s3.listObjects(params, (err, data) => {
       return imgArr;
     }
     
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 10000; i++) {
       let property = {};
       property.id = i
       property.imageUrl = generateImagesArr();
